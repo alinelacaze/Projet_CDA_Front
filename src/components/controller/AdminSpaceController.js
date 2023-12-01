@@ -20,7 +20,7 @@ export default function AdminSpaceController() {
 
       const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:8484/api/space/colonie', {
+        const response = await fetch('http://34.163.222.87:8484/api/space/colonie', {
           method: 'POST',
           body: JSON.stringify(addCol),
           headers: {
@@ -121,7 +121,7 @@ export default function AdminSpaceController() {
       
               function getColonie() {
                 setCol("Chargement...")
-                fetch("http://localhost:8484/api/catalogue/colonies")
+                fetch("http://34.163.222.87:8484/api/catalogue/colonies")
                    .then((response) => response.json())
                    .then(json => setCol(() => {
                     let newCol = []
@@ -158,7 +158,7 @@ export default function AdminSpaceController() {
     
               const handleUpdate = async (e) => {
                     e.preventDefault();
-                  const response = await fetch("http://localhost:8484/api/colonie/update/" + selected.value, {
+                  const response = await fetch("http://34.163.222.87:8484/api/colonie/update/" + selected.value, {
                     method: 'PUT',
                     body: JSON.stringify(updatedColonie),
                     headers: {
@@ -245,7 +245,7 @@ export default function AdminSpaceController() {
       
               function getColonie() {
                 setCol("Chargement...")
-                fetch("http://localhost:8484/api/colonie/toDelete")
+                fetch("http://34.163.222.87:8484/api/colonie/toDelete")
                    .then((response) => response.json())
                    .then(json => setCol(() => {
                     let newCol = []
@@ -283,7 +283,7 @@ export default function AdminSpaceController() {
 
               const handleDelete = (event) => {
                 event.preventDefault();
-                fetch("http://localhost:8484/api/colonie/delete/" + selected.value, {
+                fetch("http://34.163.222.87:8484/api/colonie/delete/" + selected.value, {
                   method: 'DELETE'})
                   .then(() => console.log("good"));
 
@@ -333,7 +333,7 @@ export default function AdminSpaceController() {
     
         function fetchCatalogue() {
         setCatalogue("Chargement...")
-        fetch("http://localhost:8484/api/colonie/finished")
+        fetch("http://34.163.222.87:8484/api/colonie/finished")
           .then(response => response.json())
           .then(json => setCatalogue(() => {
             let newCatalogue = []
@@ -386,7 +386,7 @@ export default function AdminSpaceController() {
     
     function enregistrerCard() {
         setData("Chargement...")
-        fetch("http://localhost:8484/api/colonie/" + number)
+        fetch("http://34.163.222.87:8484/api/colonie/" + number)
            .then((response) => response.json())
            .then(json => setData(() => {
                const newColonie = [];
@@ -411,7 +411,7 @@ export default function AdminSpaceController() {
         
           const handlePicSubmit = (e) => {
             const file = e.target.files[0];
-            const url = 'http://localhost:8484/api/upload/';
+            const url = 'http://34.163.222.87:8484/api/upload/';
             const formData = new FormData();
             formData.append('file', file);
             formData.append('fileName', file.name);
@@ -445,9 +445,9 @@ export default function AdminSpaceController() {
     
     
       const handleUpdateURL = () => {
-        data[8] = "http://localhost:8484/api/upload/files/" + `${nomImage}`;
+        data[8] = "http://34.163.222.87:8484/api/upload/files/" + `${nomImage}`;
         console.log(`data`, data)
-        const urlData = "http://localhost:8484/api/colonie/update/" + number;
+        const urlData = "http://34.163.222.87:8484/api/colonie/update/" + number;
         console.log(`url`, urlData)
         const requestOptions = {
           method: 'PUT',

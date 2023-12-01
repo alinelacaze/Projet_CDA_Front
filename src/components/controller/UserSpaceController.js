@@ -22,7 +22,7 @@ export default function UserSpaceController(props) {
 
     function fetchPerso() {
 
-        fetch("http://localhost:8484/api/personne/" + `${persoId}`)
+        fetch("http://34.163.222.87:8484/api/personne/" + `${persoId}`)
            .then((response) => response.json())
            .then(json => setPerso(() => {
             const newPerso = [];
@@ -43,7 +43,7 @@ export default function UserSpaceController(props) {
 
       function gelColId() {
 
-        axios.get("http://localhost:8484/api/colonie/personne/" + `${persoId}`).then(resp => {
+        axios.get("http://34.163.222.87:8484/api/colonie/personne/" + `${persoId}`).then(resp => {
           setColonieInscrit(resp.data);
         });
         console.log(`coloInscrit`, coloInscrit)
@@ -62,7 +62,7 @@ export default function UserSpaceController(props) {
     
             function getColonie() {
               setCol("Chargement...")
-              fetch("http://localhost:8484/api/colonie/display")
+              fetch("http://34.163.222.87:8484/api/colonie/display")
                  .then((response) => response.json())
                  .then(json => setCol(() => {
                   let newCol = []
@@ -82,7 +82,7 @@ export default function UserSpaceController(props) {
 
             const handleSubmit = async (e) => {
               e.preventDefault();
-              const response = await fetch('http://localhost:8484/api/personne/update/' + `${persoId}`, {
+              const response = await fetch('http://34.163.222.87:8484/api/personne/update/' + `${persoId}`, {
                 method: 'PUT',
                 body: JSON.stringify(bodyPerso),
                 headers: {
@@ -133,7 +133,7 @@ export default function UserSpaceController(props) {
           setPerso({...perso, colonie: null})
           console.log(`perso null colo`, perso)
 
-          fetch('http://localhost:8484/api/personne/update/' + `${persoId}`, {
+          fetch('http://34.163.222.87:8484/api/personne/update/' + `${persoId}`, {
             method: 'PUT',
             body: JSON.stringify({...props.personne, colonie: null}),
             headers: {

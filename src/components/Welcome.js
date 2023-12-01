@@ -44,7 +44,7 @@ export default function Welcome(props) {
 
         const fetchColSpring = () => {
             setSpring("Chargement...")
-            fetch("http://localhost:8484/api/colonie/spring")
+            fetch("http://34.163.222.87:8484/api/colonie/spring")
               .then(response => response.json())
               .then(json => setSpring(() => {
                 const newColSpring = []
@@ -82,7 +82,7 @@ export default function Welcome(props) {
 
         const fetchColSummer = () => {
             setSummer("Chargement...")
-            fetch("http://localhost:8484/api/colonie/summer")
+            fetch("http://34.163.222.87:8484/api/colonie/summer")
               .then(response => response.json())
               .then(json => setSummer(() => {
                 const newColSummer = []
@@ -120,7 +120,7 @@ export default function Welcome(props) {
 
         const fetchColFall = () => {
             setFall("Chargement...")
-            fetch("http://localhost:8484/api/colonie/fall")
+            fetch("http://34.163.222.87:8484/api/colonie/fall")
               .then(response => response.json())
               .then(json => setFall(() => {
                 const newColFall = []
@@ -158,7 +158,7 @@ export default function Welcome(props) {
 
         const fetchColWinter = () => {
             setWinter("Chargement...")
-            fetch("http://localhost:8484/api/colonie/winter")
+            fetch("http://34.163.222.87:8484/api/colonie/winter")
               .then(response => response.json())
               .then(json => setWinter(() => {
                 const newColWinter = []

@@ -26,7 +26,7 @@ export default function CatalogueController(props) {
 
   function getDispoColonie() {
     setColoDispo("Chargement...")
-    fetch("http://localhost:8484/api/colonie/display")
+    fetch("http://34.163.222.87:8484/api/colonie/display")
        .then((response) => response.json())
        .then(json => setColoDispo(() => {
         let newCol = []
@@ -70,7 +70,7 @@ export default function CatalogueController(props) {
 
     function fetchCatalogue() {
         setCatalogue("Chargement...")
-        fetch("http://localhost:8484/api/catalogue/colonies")
+        fetch("http://34.163.222.87:8484/api/catalogue/colonies")
           .then(response => response.json())
           .then(json => setCatalogue(() => {
             const newCatalogue = []
@@ -108,7 +108,7 @@ export default function CatalogueController(props) {
 
     const fetchColoniesSpring = () => {
       setColoniesSpring("Chargement...")
-      fetch("http://localhost:8484/api/colonie/spring")
+      fetch("http://34.163.222.87:8484/api/colonie/spring")
         .then(response => response.json())
         .then(json => setColoniesSpring(() => {
           const newColPrintemps = []
@@ -152,7 +152,7 @@ export default function CatalogueController(props) {
 
   const fetchColoniesSummer = () => {
     setColoniesSummer("Chargement...")
-    fetch("http://localhost:8484/api/colonie/summer")
+    fetch("http://34.163.222.87:8484/api/colonie/summer")
       .then(response => response.json())
       .then(json => setColoniesSummer(() => {
         const newColSummer = []
@@ -196,7 +196,7 @@ export default function CatalogueController(props) {
 
 const fetchColoniesFall = () => {
   setColoniesFall("Chargement...")
-  fetch("http://localhost:8484/api/colonie/fall")
+  fetch("http://34.163.222.87:8484/api/colonie/fall")
     .then(response => response.json())
     .then(json => setColoniesFall(() => {
       const newColFall = []
@@ -240,7 +240,7 @@ const fetchColoniesFall = () => {
 
 const fetchColoniesWinter = () => {
   setColoniesWinter("Chargement...")
-  fetch("http://localhost:8484/api/colonie/winter")
+  fetch("http://34.163.222.87:8484/api/colonie/winter")
     .then(response => response.json())
     .then(json => setColoniesWinter(() => {
       const newColWinter = []
@@ -287,7 +287,7 @@ const fetchColoniesWinter = () => {
 
       const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:8484/api/space/colonie', {
+        const response = await fetch('http://34.163.222.87:8484/api/space/colonie', {
           method: 'POST',
           body: JSON.stringify(data),
           headers: {

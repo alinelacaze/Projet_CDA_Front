@@ -30,7 +30,7 @@ export default function ColonieControllerUser(props) {
 
     function fetchColonie() {
         setColonie("Chargement...")
-        fetch("http://localhost:8484/api/colonie/" + path)
+        fetch("http://34.163.222.87:8484/api/colonie/" + path)
            .then((response) => response.json())
            .then(json => setColonie(() => {
                const newColonie = [];
@@ -52,7 +52,7 @@ export default function ColonieControllerUser(props) {
 
         function inscriptionCol() {
 
-          fetch('http://localhost:8484/api/personne/update/' + personneParticipante.id, {
+          fetch('http://34.163.222.87:8484/api/personne/update/' + personneParticipante.id, {
               method: 'PUT',
               body: JSON.stringify({...personneParticipante, colonie: {id: path}
               }),
@@ -75,7 +75,7 @@ export default function ColonieControllerUser(props) {
             const array = colonie
             console.log(array)
 
-            fetch("http://localhost:8484/api/colonie/update/" + path, {
+            fetch("http://34.163.222.87:8484/api/colonie/update/" + path, {
               method: 'PUT',
               body: JSON.stringify({
                 "id": array[0],
@@ -101,7 +101,7 @@ export default function ColonieControllerUser(props) {
 
     function fetchParticipants() {
         setParticipant("Chargement...")
-        fetch("http://localhost:8484/api/space/colonie/" + path + "/personnes")
+        fetch("http://34.163.222.87:8484/api/space/colonie/" + path + "/personnes")
            .then((response) => response.json())
            .then(json => setParticipant(() => {
                const newParticipant = [];
@@ -117,7 +117,7 @@ export default function ColonieControllerUser(props) {
         // Display the number of participants
 
         function fetchNombreParticipants() {
-          fetch("http://localhost:8484/api/space/colonie/" + path + "/personnes")
+          fetch("http://34.163.222.87:8484/api/space/colonie/" + path + "/personnes")
              .then((response) => response.json())
              .then(json => setNombre(() => {
               return json.length
@@ -126,7 +126,7 @@ export default function ColonieControllerUser(props) {
 
     /*
         function deleteColonie() {
-          fetch("http://localhost:8484/api/colonie/delete/" + path, {
+          fetch("http://34.163.222.87:8484/api/colonie/delete/" + path, {
             method: 'DELETE'})
             .then(() => console.log("Delete successful"));
           }
@@ -135,7 +135,7 @@ export default function ColonieControllerUser(props) {
         
         const handleUpdate = async (e) => {
             e.preventDefault();
-            const response = await fetch("http://localhost:8484/api/colonie/update/" + path, {
+            const response = await fetch("http://34.163.222.87:8484/api/colonie/update/" + path, {
               method: 'PUT',
               body: JSON.stringify(updatedColonie),
               headers: {

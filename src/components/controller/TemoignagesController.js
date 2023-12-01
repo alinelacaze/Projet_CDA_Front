@@ -20,7 +20,7 @@ export default function TemoignagesController() {
 
     function fetchCatalogue() {
     setCatalogue("Chargement...")
-    fetch("http://localhost:8484/api/catalogue/colonies")
+    fetch("http://34.163.222.87:8484/api/catalogue/colonies")
       .then(response => response.json())
       .then(json => setCatalogue(() => {
         let newCatalogue = []
@@ -73,7 +73,7 @@ console.log(number)
 
 function enregistrerCard() {
     setData("Chargement...")
-    fetch("http://localhost:8484/api/colonie/" + number)
+    fetch("http://34.163.222.87:8484/api/colonie/" + number)
        .then((response) => response.json())
        .then(json => setData(() => {
            const newColonie = [];
@@ -98,7 +98,7 @@ function enregistrerCard() {
     
       const handlePicSubmit = (e) => {
         const file = e.target.files[0];
-        const url = 'http://localhost:8484/api/upload/';
+        const url = 'http://34.163.222.87:8484/api/upload/';
         const formData = new FormData();
         formData.append('file', file);
         formData.append('fileName', file.name);
@@ -132,9 +132,9 @@ function enregistrerCard() {
 
 
   const handleUpdateURL = () => {
-    data[8] = "http://localhost:8484/api/upload/files/" + `${nomImage}`;
+    data[8] = "http://34.163.222.87:8484/api/upload/files/" + `${nomImage}`;
     console.log(`data`, data)
-    const urlData = "http://localhost:8484/api/colonie/update/" + number;
+    const urlData = "http://34.163.222.87:8484/api/colonie/update/" + number;
     console.log(`url`, urlData)
     const requestOptions = {
       method: 'PUT',
@@ -164,7 +164,7 @@ function enregistrerCard() {
 
 
   const fetchFinishedCol = () => {
-    fetch("http://localhost:8484/api/colonie/finished")
+    fetch("http://34.163.222.87:8484/api/colonie/finished")
       .then(response => response.json())
       .then(json => setFinCol(() => {
         const newFinCol = []

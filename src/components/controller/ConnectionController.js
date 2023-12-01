@@ -6,7 +6,7 @@ export default function ConnectionController(props) {
 
     // Mettre des commentaires
 
-    const backUrl = "http://localhost:8484/api/security";
+    const backUrl = "http://34.163.222.87:8484/api/security";
 
     function fetchPersonne(login, password) {
         const requestOptions = {

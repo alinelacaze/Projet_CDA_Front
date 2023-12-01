@@ -29,7 +29,7 @@ export default function ColonieControllerAdmin() {
 
     function fetchColonie() {
         setColonie("Chargement...")
-        fetch("http://localhost:8484/api/colonie/" + path)
+        fetch("http://34.163.222.87:8484/api/colonie/" + path)
            .then((response) => response.json())
            .then(json => setColonie(() => {
                const newColonie = [];
@@ -54,7 +54,7 @@ export default function ColonieControllerAdmin() {
             const array = colonie
             console.log(array)
 
-            fetch("http://localhost:8484/api/colonie/update/" + path, {
+            fetch("http://34.163.222.87:8484/api/colonie/update/" + path, {
               method: 'PUT',
               body: JSON.stringify({
                 "id": array[0],
@@ -83,7 +83,7 @@ export default function ColonieControllerAdmin() {
             const array = colonie
             console.log(array)
 
-            fetch("http://localhost:8484/api/colonie/update/" + path, {
+            fetch("http://34.163.222.87:8484/api/colonie/update/" + path, {
               method: 'PUT',
               body: JSON.stringify({
                 "id": array[0],
@@ -109,7 +109,7 @@ export default function ColonieControllerAdmin() {
     function fetchParticipants() {
 
         setParticipant("Chargement...")
-        fetch("http://localhost:8484/api/space/colonie/" + path + "/personnes")
+        fetch("http://34.163.222.87:8484/api/space/colonie/" + path + "/personnes")
            .then((response) => response.json())
            .then(json => setParticipant(() => {
                const newParticipant = [];
@@ -127,7 +127,7 @@ export default function ColonieControllerAdmin() {
         // Display the number of participants
 
         function fetchNombreParticipants() {
-          fetch("http://localhost:8484/api/space/colonie/" + path + "/personnes")
+          fetch("http://34.163.222.87:8484/api/space/colonie/" + path + "/personnes")
              .then((response) => response.json())
              .then(json => setNombre(() => {
               return json.length
@@ -136,7 +136,7 @@ export default function ColonieControllerAdmin() {
 
     /*
         function deleteColonie() {
-          fetch("http://localhost:8484/api/colonie/delete/" + path, {
+          fetch("http://34.163.222.87:8484/api/colonie/delete/" + path, {
             method: 'DELETE'})
             .then(() => console.log("Delete successful"));
           }
@@ -145,7 +145,7 @@ export default function ColonieControllerAdmin() {
         
         const handleUpdate = async (e) => {
             e.preventDefault();
-            const response = await fetch("http://localhost:8484/api/colonie/update/" + path, {
+            const response = await fetch("http://34.163.222.87:8484/api/colonie/update/" + path, {
               method: 'PUT',
               body: JSON.stringify(updatedColonie),
               headers: {
@@ -216,7 +216,7 @@ export default function ColonieControllerAdmin() {
         const handleAddSubmit = async (e) => {
           e.preventDefault();
 
-          const responseOne = await fetch('http://localhost:8484/api/personne/' + `${values.firstname}/` + `${values.lastname}`, {
+          const responseOne = await fetch('http://34.163.222.87:8484/api/personne/' + `${values.firstname}/` + `${values.lastname}`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json'
@@ -226,7 +226,7 @@ export default function ColonieControllerAdmin() {
           console.log(resultOne);
         
 
-          const responseTwo = await fetch('http://localhost:8484/api/personne/update/' + `${resultOne.id}`, {
+          const responseTwo = await fetch('http://34.163.222.87:8484/api/personne/update/' + `${resultOne.id}`, {
             method: 'PUT',
             body: JSON.stringify({...resultOne, colonie: {id: path}}),
             headers: {
@@ -271,7 +271,7 @@ export default function ColonieControllerAdmin() {
           const handleAddSubmit = async (e) => {
             e.preventDefault();
   
-            const responseOne = await fetch('http://localhost:8484/api/personne/' + `${values.firstname}/` + `${values.lastname}`, {
+            const responseOne = await fetch('http://34.163.222.87:8484/api/personne/' + `${values.firstname}/` + `${values.lastname}`, {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json'
@@ -281,7 +281,7 @@ export default function ColonieControllerAdmin() {
             console.log(resultOne);
           
   
-            const responseTwo = await fetch('http://localhost:8484/api/personne/update/' + `${resultOne.id}`, {
+            const responseTwo = await fetch('http://34.163.222.87:8484/api/personne/update/' + `${resultOne.id}`, {
               method: 'PUT',
               body: JSON.stringify({...resultOne, colonie: null}),
               headers: {
@@ -298,7 +298,7 @@ export default function ColonieControllerAdmin() {
           const array = colonie
           console.log(array)
 
-          fetch("http://localhost:8484/api/colonie/update/" + path, {
+          fetch("http://34.163.222.87:8484/api/colonie/update/" + path, {
             method: 'PUT',
             body: JSON.stringify({
               "id": array[0],
